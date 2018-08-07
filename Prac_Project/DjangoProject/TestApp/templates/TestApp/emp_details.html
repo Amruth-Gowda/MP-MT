@@ -1,0 +1,31 @@
+{% extends 'TestApp/index.html' %}
+
+{% block content %}
+<div align="center">
+<table class="comicGreen">
+<thead>
+<tr> 
+		<th>MID</th> 
+		<th>Name</th> 
+		<th>Email</th> 
+		<th>Mobile</th> 
+		<th>Address</th> 
+		<th>Designation</th> 
+	</tr>
+</thead>
+<tbody>
+{% for a in mylist %}
+		<tr>
+			<td> {{ a.0 }} </td>
+			<td> {{ a.1 }} </td>
+			<td> {{ a.2 }} </td>
+			<td> {{ a.3 }} </td>
+			<td> {{ a.4 }} </td>
+			<td> {{ a.5 }} </td>
+		</tr>
+		{% endfor %}
+</tbody>
+</table>
+<div>
+{% endblock %}
+	
