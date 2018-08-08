@@ -1207,8 +1207,9 @@ h1, h2, h3, h4, h5, h6, figure {
     box-shadow: none;
     border: 1px solid #4586ff; }
 
-input[type="text"] {
-  height: 50px; }
+input[type="text"],input[type="email"],input[type="number"] {
+  height: 50px;
+color: black}
 
 .form-group {
   margin-bottom: 30px; }

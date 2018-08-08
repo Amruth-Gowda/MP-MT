@@ -253,9 +253,9 @@ button,
 input,
 optgroup,
 select,
-textarea {
-  color: inherit; // 1
-  font: inherit; // 2
+.textarea {
+  color: #000000; // 1
+  font: sans-serif; // 2
   margin: 0; // 3
 }
 
