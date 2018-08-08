@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from . import views
+from personal.views import EmployeeView 
 
 urlpatterns = [
-		url(r'^$', views.index, name='index')
+		url(r'^$', EmployeeView.as_view(), name='employee')
 ]
