@@ -8,3 +8,7 @@ class EmployeeForm(forms.Form):
 	Address = forms.CharField(max_length=100)
 	Designation = forms.CharField(max_length=100)
 	
+
+class EmployeeDeleteForm(forms.Form):
+	ID = forms.IntegerField()
+	

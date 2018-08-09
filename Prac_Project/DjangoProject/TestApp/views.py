@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 
 from TestApp.forms import EmployeeForm
+from TestApp.forms import EmployeeDeleteForm
 
 from django.shortcuts import render
 
@@ -45,7 +46,7 @@ def contact(request):
 	return render(request, 'TestApp/contact.html')
 	
 
-class EmployeeView(TemplateView):
+class EmployeeAdd(TemplateView):
 	template_name = 'TestApp/add_employee.html'
 
 	def get(self, request):
@@ -70,5 +71,29 @@ class EmployeeView(TemplateView):
 			count = e.execute(query, val)
 			connection.commit()
 			emp_data = EmployeeForm()
+		
+		return render(request, self.template_name, {'form': emp_data}) 		
+
+
+class EmployeeDelete(TemplateView):
+	template_name = 'TestApp/delete_employee.html'
+
+	def get(self, request):
+		emp_data = EmployeeDeleteForm()
+		return render(request, self.template_name, {'form': emp_data}) 
+		
+	def post(self, request):
+		emp_data = EmployeeDeleteForm(request.POST)
+		if emp_data.is_valid():
+			id = emp_data.cleaned_data['ID']
+			print(id)
+			query = "DELETE FROM mt_db.employee_details WHERE (ID = %s)"
+			print(query)
+			connection = pymysql.connect(host='localhost', port=3306, user='root', password='root', db='mt_db')
+			e = connection.cursor()
+			val = (id)
+			count = e.execute(query, val)
+			connection.commit()
+			emp_data = EmployeeDeleteForm()
 		
 		return render(request, self.template_name, {'form': emp_data}) 		

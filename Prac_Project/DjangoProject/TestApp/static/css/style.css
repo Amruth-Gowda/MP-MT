@@ -15,7 +15,7 @@ body {
   font-weight: 300;
   font-size: 17px;
   line-height: 1.5;
-  color: #f7f4f4;
+  color: black;
   background: #fff; }
 
 #page {
@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5, h6, figure {
           line-height: 1.5;
           margin-bottom: 0px;
           font-weight: 300;
-          color: rgba(255, 255, 255, 0.7); }
+          color: black; }
           #colorlib-hero .flexslider .slider-text > .slider-text-inner h2 a {
             color: rgba(255, 255, 255, 0.8); }
           @media screen and (max-width: 768px) {
